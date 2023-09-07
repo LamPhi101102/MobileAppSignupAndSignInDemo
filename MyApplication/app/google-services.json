@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "41896014178",
+    "project_id": "appchatmobile-d0bfa",
+    "storage_bucket": "appchatmobile-d0bfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41896014178:android:28480dd7fb4d7784243c3b",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41896014178-bvv8ier1smub59fhth9olcbjcph0u7j4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxjwrXCIfJFoxDsVmdTvjx7PYl4ts7m7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41896014178-bvv8ier1smub59fhth9olcbjcph0u7j4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
