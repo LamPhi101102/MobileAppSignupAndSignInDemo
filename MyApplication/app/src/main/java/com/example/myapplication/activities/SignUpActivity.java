@@ -150,11 +150,11 @@ public class SignUpActivity extends AppCompatActivity {
     }
     // check valid
     private Boolean isValidSignUpDetails(){
-//        if(encodedImage == null){
-//            showToast("Please Select Profile Image");
-//            return false;
-//        else
-        if(binding.inputName.getText().toString().trim().isEmpty()){
+        if(encodedImage == null) {
+            showToast("Please Select Profile Image");
+            return false;
+        }
+        else if(binding.inputName.getText().toString().trim().isEmpty()){
             //trim() delete space head and back
             showToast("Please Enter Name");
             return false;

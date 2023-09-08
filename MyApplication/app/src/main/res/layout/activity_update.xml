@@ -18,55 +18,57 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_20sdp"
-            android:text=""
+            android:text="Change Password"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_18ssp"
             android:textStyle="bold"/>
-
-        <FrameLayout
-            android:id="@+id/layoutImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp">
-            <com.makeramen.roundedimageview.RoundedImageView
-                android:id="@+id/imageProfile"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_80sdp"
-                android:background="@drawable/background_image"
-                android:scaleType="centerCrop"
-                app:riv_oval="true"/>
-        </FrameLayout>
-        <TextView
-            android:id="@+id/textName"
+=
+        <EditText
+            android:id="@+id/inputOldPassword"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_20sdp"
             android:background="@drawable/background_input"
+            android:hint="Old Password"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />
-        <TextView
-            android:id="@+id/textEmail"
+
+        <EditText
+            android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_45sdp"
             android:layout_marginTop="@dimen/_16sdp"
             android:background="@drawable/background_input"
+            android:hint="@string/password"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
+            android:inputType="textPassword"
             android:paddingStart="@dimen/_15sdp"
             android:paddingEnd="@dimen/_16sdp"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_13ssp" />
-
-
+        <EditText
+            android:id="@+id/inputConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/background_input"
+            android:hint="@string/confirm_password"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_16sdp"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/_13ssp" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -75,11 +77,11 @@
             android:animateLayoutChanges="true">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonUpdate"
+                android:id="@+id/buttonChange"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginTop="@dimen/_16sdp"
-                android:text="Update Profile"
+                android:text="Change"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_13ssp"
                 android:textStyle = "bold"
@@ -93,6 +95,8 @@
                 />
 
         </FrameLayout>
+
+
 
 
     </LinearLayout>
