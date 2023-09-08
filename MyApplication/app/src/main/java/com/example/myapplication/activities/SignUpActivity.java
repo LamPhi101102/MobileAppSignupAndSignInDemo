@@ -118,7 +118,7 @@ public class SignUpActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_EMAIL, binding.inputEmail.getText().toString());
                     preferenceManager.putString(Constants.KEY_PASSWORD,binding.inputPassword.getText().toString());
                     preferenceManager.putString(Constants.KEY_IMAGE, encodedImage);
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(intent);
                 })
@@ -150,10 +150,11 @@ public class SignUpActivity extends AppCompatActivity {
     }
     // check valid
     private Boolean isValidSignUpDetails(){
-        if(encodedImage == null){
-            showToast("Please Select Profile Image");
-            return false;
-        }else if(binding.inputName.getText().toString().trim().isEmpty()){
+//        if(encodedImage == null){
+//            showToast("Please Select Profile Image");
+//            return false;
+//        else
+        if(binding.inputName.getText().toString().trim().isEmpty()){
             //trim() delete space head and back
             showToast("Please Enter Name");
             return false;

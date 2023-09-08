@@ -3,8 +3,6 @@ package com.example.myapplication.utilities;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.google.android.datatransport.runtime.dagger.multibindings.StringKey;
-
 // this function is used to easy to manage and query data
 public class PreferenceManager {
     // allow acess and edit data
@@ -37,7 +35,7 @@ public class PreferenceManager {
     }
     // it is used to get String from sharedPreferences based on String key
     // if there is no values it always return false
-    public String getString(String key){
+    public String getString(String key, String s){
         return sharedPreferences.getString(key, null);
     }
     // Delete Function
