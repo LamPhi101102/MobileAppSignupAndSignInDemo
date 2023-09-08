@@ -44,7 +44,6 @@ public class SigninActivity extends AppCompatActivity {
 
     }
     private void signIn(){
-        loading(true);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection(Constants.KEY_COLLECTION_USERS)
                 .whereEqualTo(Constants.KEY_EMAIL,binding.inputEmail.getText().toString())
@@ -64,21 +63,11 @@ public class SigninActivity extends AppCompatActivity {
                             startActivity(intent);
                     }
                     else {
-                        loading(false);
                         showToast("Chiu thua roi ban e");
                     }
                 });
     }
-    private void loading(Boolean isLoading){
-        if(isLoading){
-            binding.buttonSignin.setVisibility(View.INVISIBLE);
-            binding.processBar.setVisibility(View.VISIBLE);
-        }
-        else {
-            binding.processBar.setVisibility(View.INVISIBLE);
-            binding.buttonSignin.setVisibility(View.VISIBLE);
-        }
-    }
+
     private  void showToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }

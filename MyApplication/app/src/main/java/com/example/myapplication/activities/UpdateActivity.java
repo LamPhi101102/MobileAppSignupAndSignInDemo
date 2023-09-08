@@ -29,27 +29,25 @@ public class UpdateActivity extends AppCompatActivity {
         // call binding
         binding = ActivityUpdateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        String id = preferenceManager.getString(Constants.KEY_USER_ID, "");
+        setListeners();
+    }
+    private void setListeners(){
         binding.buttonChange.setOnClickListener(v ->{
-           if(isValid()){
-               FirebaseFirestore db = FirebaseFirestore.getInstance();
-               db.collection("users")
-                       .get()
-                       .addOnCompleteListener(task -> {
-                   if(task.isSuccessful() && task.getResult() != null){
-                       DocumentReference userRef = db.collection("users").document(id);
-                       userRef.update("password",binding.inputPassword.getText().toString()).addOnSuccessListener(res ->{
-                           showToast("Update Success");
-                           Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
-                           intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                           startActivity(intent);
-                       });
-                   }
-                   else {
-                       showToast("Chiu thua roi ban e");
-                   }
-               });
-           }
+            if(isValid()){
+                String id = preferenceManager.getString(Constants.KEY_USER_ID, "");
+                changePass(id);
+            }
+        });
+
+    }
+    private void changePass(String id){
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        DocumentReference userRef = db.collection("users").document(id);
+        userRef.update("password",binding.inputPassword.getText().toString()).addOnSuccessListener(res ->{
+            showToast("Update Success");
+            Intent intent = new Intent(getApplicationContext(), SigninActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
     }
     private boolean isValid(){
